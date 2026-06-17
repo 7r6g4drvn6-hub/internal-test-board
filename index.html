@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bench & Release Board</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="app">
+      <header class="topbar">
+        <p class="board-kicker">INTERNAL TEST BOARD</p>
+        <div class="top-actions">
+          <button class="ghost-btn" type="button" id="addRowBtn">Add Model</button>
+          <button class="ghost-btn" type="button" id="exportBtn">Export Data</button>
+          <label class="ghost-btn import-btn">
+            Import Data
+            <input id="importInput" type="file" accept="application/json" hidden />
+          </label>
+          <button class="danger-btn" type="button" id="resetDataBtn">Reset Default</button>
+        </div>
+      </header>
+
+      <section class="head-rules" aria-label="Rules">
+        <article class="detail-card">
+          <p class="eyebrow">Update rule</p>
+          <h2>Twice-Weekly Update Guidance</h2>
+          <ul>
+            <li>Update versions: HCP3, HCP5, flash timing, and target version plan.</li>
+            <li>Update resources: VIN, bench owner, booking status, and available window.</li>
+            <li>Update status: available, pending booking, occupied, pending version, or missing information.</li>
+          </ul>
+        </article>
+
+        <article class="detail-card">
+          <p class="eyebrow">Before booking</p>
+          <h2>Before Booking Checklist</h2>
+          <ul>
+            <li>Confirm the test purpose, expected time window, required model, and environment.</li>
+            <li>Make sure the bench or vehicle has no booking conflict, the owner is known, and logs can be exported.</li>
+            <li>Notify the maintainer by email whenever the version or bench status changes.</li>
+          </ul>
+        </article>
+      </section>
+
+      <section class="filters">
+        <div class="segmented" role="tablist" aria-label="Environment filter">
+          <button class="segment active" type="button" data-filter="all">All</button>
+          <button class="segment" type="button" data-filter="Live">Live</button>
+          <button class="segment" type="button" data-filter="Approval">Approval</button>
+        </div>
+        <label class="search">
+          <span>Search</span>
+          <input id="searchInput" type="search" placeholder="Model / VIN / Owner / Status" />
+        </label>
+        <span class="save-state" id="saveState">Auto Saved</span>
+      </section>
+
+      <section class="board-panel">
+        <div class="panel-head">
+          <div>
+            <p class="eyebrow">Editable matrix</p>
+            <h2>Release, Resource & Booking Status</h2>
+          </div>
+          <p>All fields are editable. Deleted rows are saved to local data immediately.</p>
+        </div>
+
+        <div class="table-wrap">
+          <table id="releaseTable">
+            <colgroup>
+              <col class="col-model" />
+              <col class="col-env" />
+              <col class="col-hcp" />
+              <col class="col-hcp" />
+              <col class="col-vin" />
+              <col class="col-resource" />
+              <col class="col-owner" />
+              <col class="col-booking" />
+              <col class="col-plan" />
+              <col class="col-status" />
+              <col class="col-action" />
+            </colgroup>
+            <thead>
+              <tr>
+                <th>Model</th>
+                <th>Environment</th>
+                <th>HCP3</th>
+                <th>HCP5</th>
+                <th>VIN</th>
+                <th>Resource</th>
+                <th>Owner</th>
+                <th>Booking Status</th>
+                <th>Version Update Plan</th>
+                <th>Status</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody id="releaseTableBody"></tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="mail-panel">
+        <div class="panel-head">
+          <div>
+            <p class="eyebrow">Email workflow</p>
+            <h2>Bench Usage Request / Status Change Email</h2>
+          </div>
+          <p>Default recipient: xu.xuan.extern@porsche.digital</p>
+        </div>
+
+        <div class="mail-grid">
+          <form class="mail-form" id="requestForm">
+            <h3>Request Bench Usage</h3>
+            <label class="field">
+              <span>Recipient</span>
+              <input name="notifyEmail" type="email" value="xu.xuan.extern@porsche.digital" />
+            </label>
+            <label class="field">
+              <span>Requester</span>
+              <input name="requester" placeholder="Name / Team" />
+            </label>
+            <label class="field">
+              <span>Requester Email</span>
+              <input name="requesterEmail" type="email" placeholder="requester@company.com" />
+            </label>
+            <label class="field">
+              <span>Model & Environment</span>
+              <select name="target" data-target-select></select>
+            </label>
+            <label class="field">
+              <span>Expected Date</span>
+              <input name="dueDate" type="date" />
+            </label>
+            <label class="field">
+              <span>Priority</span>
+              <select name="priority">
+                <option>High</option>
+                <option selected>Medium</option>
+                <option>Low</option>
+              </select>
+            </label>
+            <label class="field wide">
+              <span>Request Details</span>
+              <textarea name="detail" placeholder="Describe the test purpose, expected duration, required VIN/version, remote access needs, and logs to export."></textarea>
+            </label>
+            <button class="submit-btn" type="submit">Generate Request Email</button>
+          </form>
+
+          <form class="mail-form" id="statusForm">
+            <h3>Notify Bench Status Change</h3>
+            <label class="field">
+              <span>Recipient</span>
+              <input name="notifyEmail" type="email" value="xu.xuan.extern@porsche.digital" />
+            </label>
+            <label class="field">
+              <span>Updated By</span>
+              <input name="requester" placeholder="Name / Team" />
+            </label>
+            <label class="field">
+              <span>Model & Environment</span>
+              <select name="target" data-target-select></select>
+            </label>
+            <label class="field">
+              <span>Status Change</span>
+              <select name="statusChange">
+                <option>Available</option>
+                <option>Booked</option>
+                <option>Blocked</option>
+                <option>Version updated</option>
+                <option>Owner changed</option>
+              </select>
+            </label>
+            <label class="field">
+              <span>Effective Date</span>
+              <input name="dueDate" type="date" />
+            </label>
+            <label class="field wide">
+              <span>Change Details</span>
+              <textarea name="detail" placeholder="Describe the reason, new version, booking time, owner change, impact scope, or next action."></textarea>
+            </label>
+            <button class="submit-btn secondary" type="submit">Generate Status Email</button>
+          </form>
+        </div>
+
+        <div class="mail-result" id="emailDraft" hidden>
+          <div>
+            <p class="notice-title">Email Draft Generated</p>
+            <p class="notice-meta">If your mail client does not open automatically, use the link to open it manually.</p>
+          </div>
+          <a id="emailDraftLink" href="#">Open Email Draft</a>
+        </div>
+      </section>
+    </main>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
