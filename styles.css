@@ -449,6 +449,10 @@ ul {
   gap: 14px;
 }
 
+.sync-panel .mail-grid {
+  align-items: start;
+}
+
 .mail-form {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -522,6 +526,14 @@ ul {
 .mail-result a {
   color: var(--teal);
   font-weight: 800;
+}
+
+.sync-note {
+  align-content: start;
+}
+
+.sync-note ul {
+  margin-top: 10px;
 }
 
 [hidden] {

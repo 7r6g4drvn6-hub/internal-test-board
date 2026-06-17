@@ -1,4 +1,11 @@
 const STORAGE_KEY = "bench-board-direct-edit-en-v1";
+const TOKEN_KEY = "bench-board-github-token";
+const SYNC_CONFIG_KEY = "bench-board-sync-config";
+const REMOTE_DATA_PATH = "data/board.json";
+const DEFAULT_SYNC_CONFIG = {
+  repo: "7r6g4drvn6-hub/internal-test-board",
+  branch: "main",
+};
 const LEGACY_STORAGE_KEYS = ["cl48-bench-board-direct-edit-v1"];
 const DEFAULT_NOTIFY = "xu.xuan.extern@porsche.digital";
 
@@ -99,9 +106,11 @@ const requestForm = document.querySelector("#requestForm");
 const statusForm = document.querySelector("#statusForm");
 const emailDraft = document.querySelector("#emailDraft");
 const emailDraftLink = document.querySelector("#emailDraftLink");
+const syncForm = document.querySelector("#syncForm");
 
 let rows = loadRows();
 let activeFilter = "all";
+let saveTimer;
 
 function clone(value) {
   return JSON.parse(JSON.stringify(value));
@@ -153,7 +162,17 @@ function loadRows() {
 
 function saveRows() {
   localStorage.setItem(STORAGE_KEY, JSON.stringify(rows));
-  saveState.textContent = "Auto Saved";
+  setSaveState("Saved Locally");
+}
+
+function setSaveState(message, type = "ready") {
+  saveState.textContent = message;
+  saveState.dataset.type = type;
+}
+
+function scheduleLocalSave() {
+  clearTimeout(saveTimer);
+  saveTimer = setTimeout(saveRows, 250);
 }
 
 function input(value, field, index, placeholder = "") {
@@ -228,7 +247,7 @@ function updateRowValue(target) {
   if (!Number.isInteger(index) || !field || !rows[index]) return;
 
   rows[index][field] = target.value;
-  saveRows();
+  scheduleLocalSave();
   updateTargetSelects();
 }
 
@@ -285,6 +304,111 @@ async function importData(file) {
   rows = normalizeRows(parsed);
   saveRows();
   renderTable();
+}
+
+function getSyncConfig() {
+  try {
+    return {
+      ...DEFAULT_SYNC_CONFIG,
+      ...JSON.parse(localStorage.getItem(SYNC_CONFIG_KEY) || "{}"),
+    };
+  } catch {
+    return { ...DEFAULT_SYNC_CONFIG };
+  }
+}
+
+function setSyncConfig(config) {
+  localStorage.setItem(SYNC_CONFIG_KEY, JSON.stringify(config));
+}
+
+function getToken() {
+  return localStorage.getItem(TOKEN_KEY) || "";
+}
+
+function setToken(token) {
+  if (token) {
+    localStorage.setItem(TOKEN_KEY, token);
+  }
+}
+
+function getRawDataUrl(config = getSyncConfig()) {
+  const [owner, repo] = config.repo.split("/");
+  return `https://raw.githubusercontent.com/${owner}/${repo}/${config.branch}/${REMOTE_DATA_PATH}?t=${Date.now()}`;
+}
+
+async function loadRemoteRows() {
+  try {
+    setSaveState("Loading Cloud Data", "working");
+    const response = await fetch(getRawDataUrl(), { cache: "no-store" });
+    if (!response.ok) throw new Error(`HTTP ${response.status}`);
+    const data = await response.json();
+    if (!Array.isArray(data.rows)) throw new Error("Invalid cloud data");
+    rows = normalizeRows(data.rows);
+    saveRows();
+    renderTable();
+    setSaveState("Cloud Data Loaded");
+  } catch {
+    setSaveState("Local Data Loaded", "warn");
+  }
+}
+
+async function getRemoteFileSha(config, token) {
+  const response = await fetch(`https://api.github.com/repos/${config.repo}/contents/${REMOTE_DATA_PATH}?ref=${config.branch}`, {
+    headers: {
+      Accept: "application/vnd.github+json",
+      Authorization: `Bearer ${token}`,
+      "X-GitHub-Api-Version": "2022-11-28",
+    },
+  });
+
+  if (response.status === 404) return "";
+  if (!response.ok) throw new Error(`Unable to read remote data: HTTP ${response.status}`);
+  const data = await response.json();
+  return data.sha || "";
+}
+
+function toBase64(value) {
+  return btoa(unescape(encodeURIComponent(value)));
+}
+
+async function publishRows(config, token, message) {
+  const sha = await getRemoteFileSha(config, token);
+  const payload = {
+    message,
+    branch: config.branch,
+    content: toBase64(JSON.stringify({
+      updatedAt: new Date().toISOString(),
+      rows,
+    }, null, 2)),
+  };
+
+  if (sha) payload.sha = sha;
+
+  const response = await fetch(`https://api.github.com/repos/${config.repo}/contents/${REMOTE_DATA_PATH}`, {
+    method: "PUT",
+    headers: {
+      Accept: "application/vnd.github+json",
+      Authorization: `Bearer ${token}`,
+      "Content-Type": "application/json",
+      "X-GitHub-Api-Version": "2022-11-28",
+    },
+    body: JSON.stringify(payload),
+  });
+
+  if (!response.ok) {
+    const text = await response.text();
+    throw new Error(`Publish failed: HTTP ${response.status} ${text}`);
+  }
+
+  return response.json();
+}
+
+function hydrateSyncForm() {
+  if (!syncForm) return;
+  const config = getSyncConfig();
+  syncForm.elements.repo.value = config.repo;
+  syncForm.elements.branch.value = config.branch;
+  syncForm.elements.token.value = getToken();
 }
 
 function buildMailTo(form, type) {
@@ -370,4 +494,34 @@ envButtons.forEach((button) => {
 
 wireMailForm(requestForm, "request");
 wireMailForm(statusForm, "status");
+hydrateSyncForm();
+syncForm?.addEventListener("submit", async (event) => {
+  event.preventDefault();
+  const formData = new FormData(syncForm);
+  const config = {
+    repo: String(formData.get("repo") || DEFAULT_SYNC_CONFIG.repo).trim(),
+    branch: String(formData.get("branch") || DEFAULT_SYNC_CONFIG.branch).trim(),
+  };
+  const token = String(formData.get("token") || "").trim();
+  const message = String(formData.get("message") || "Update internal test board").trim();
+
+  if (!token) {
+    setSaveState("Token Required", "error");
+    return;
+  }
+
+  setSyncConfig(config);
+  setToken(token);
+  setSaveState("Publishing", "working");
+
+  try {
+    await publishRows(config, token, message);
+    saveRows();
+    setSaveState("Published to GitHub");
+  } catch (error) {
+    console.error(error);
+    setSaveState("Publish Failed", "error");
+  }
+});
 renderTable();
+loadRemoteRows();

@@ -1,0 +1,70 @@
+{
+  "updatedAt": "2026-06-17T10:09:11.603Z",
+  "rows": [
+    {
+      "model": "E4",
+      "env": "Approval",
+      "hcp3": "V160",
+      "hcp5": "D381",
+      "vin": "",
+      "ecu": "",
+      "resource": "Bench",
+      "owner": "",
+      "bookStatus": "Pending booking",
+      "updatePlan": "Keep the latest Approval baseline and confirm the test window before use.",
+      "status": "Version known"
+    },
+    {
+      "model": "E4",
+      "env": "Live",
+      "hcp3": "V170",
+      "hcp5": "D380",
+      "vin": "",
+      "ecu": "",
+      "resource": "Vehicle",
+      "owner": "",
+      "bookStatus": "Available",
+      "updatePlan": "Live baseline. Notify the test team before any new package update.",
+      "status": "Available"
+    },
+    {
+      "model": "983",
+      "env": "Approval",
+      "hcp3": "",
+      "hcp5": "",
+      "vin": "",
+      "ecu": "",
+      "resource": "Bench",
+      "owner": "",
+      "bookStatus": "Missing info",
+      "updatePlan": "Confirm the latest Approval package and flash plan.",
+      "status": "Missing info"
+    },
+    {
+      "model": "983",
+      "env": "Live",
+      "hcp3": "V170",
+      "hcp5": "D380",
+      "vin": "",
+      "ecu": "",
+      "resource": "Vehicle",
+      "owner": "",
+      "bookStatus": "Available",
+      "updatePlan": "Live baseline. Sync the booking plan before future version updates.",
+      "status": "Available"
+    },
+    {
+      "model": "M1",
+      "env": "Approval",
+      "hcp3": "",
+      "hcp5": "",
+      "vin": "",
+      "ecu": "",
+      "resource": "Bench",
+      "owner": "",
+      "bookStatus": "Owner pending",
+      "updatePlan": "Start regression testing after the Approval version update.",
+      "status": "Pending confirmation"
+    }
+  ]
+}
