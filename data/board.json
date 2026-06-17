@@ -1,17 +1,17 @@
 {
-  "updatedAt": "2026-06-17T10:09:11.603Z",
+  "updatedAt": "2026-06-17T10:23:51.928Z",
   "rows": [
     {
       "model": "E4",
       "env": "Approval",
       "hcp3": "V160",
       "hcp5": "D381",
-      "vin": "",
+      "vin": "BP0EEDXAZ22041131",
       "ecu": "",
       "resource": "Bench",
-      "owner": "",
+      "owner": "Shared",
       "bookStatus": "Pending booking",
-      "updatePlan": "Keep the latest Approval baseline and confirm the test window before use.",
+      "updatePlan": "",
       "status": "Version known"
     },
     {
@@ -22,9 +22,9 @@
       "vin": "",
       "ecu": "",
       "resource": "Vehicle",
-      "owner": "",
+      "owner": "Jida",
       "bookStatus": "Available",
-      "updatePlan": "Live baseline. Notify the test team before any new package update.",
+      "updatePlan": "",
       "status": "Available"
     },
     {
@@ -35,9 +35,9 @@
       "vin": "",
       "ecu": "",
       "resource": "Bench",
-      "owner": "",
+      "owner": "Shared",
       "bookStatus": "Missing info",
-      "updatePlan": "Confirm the latest Approval package and flash plan.",
+      "updatePlan": "",
       "status": "Missing info"
     },
     {
@@ -48,9 +48,9 @@
       "vin": "",
       "ecu": "",
       "resource": "Vehicle",
-      "owner": "",
+      "owner": "Jida",
       "bookStatus": "Available",
-      "updatePlan": "Live baseline. Sync the booking plan before future version updates.",
+      "updatePlan": "",
       "status": "Available"
     },
     {
@@ -63,7 +63,7 @@
       "resource": "Bench",
       "owner": "",
       "bookStatus": "Owner pending",
-      "updatePlan": "Start regression testing after the Approval version update.",
+      "updatePlan": "",
       "status": "Pending confirmation"
     }
   ]
