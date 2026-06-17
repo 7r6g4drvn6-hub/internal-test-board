@@ -449,10 +449,6 @@ ul {
   gap: 14px;
 }
 
-.sync-panel .mail-grid {
-  align-items: start;
-}
-
 .mail-form {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -528,12 +524,50 @@ ul {
   font-weight: 800;
 }
 
-.sync-note {
-  align-content: start;
+.sync-drawer {
+  position: fixed;
+  right: 18px;
+  bottom: 18px;
+  z-index: 20;
+  width: min(330px, calc(100vw - 36px));
+  color: var(--ink);
+  background: rgba(255, 255, 255, 0.96);
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow);
 }
 
-.sync-note ul {
-  margin-top: 10px;
+.sync-drawer summary {
+  cursor: pointer;
+  padding: 9px 12px;
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.sync-drawer[open] summary {
+  color: var(--teal);
+  border-bottom: 1px solid var(--line);
+}
+
+.sync-compact {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 8px;
+  padding: 10px;
+}
+
+.sync-compact input {
+  min-width: 0;
+  border: 1px solid var(--line);
+  padding: 8px 9px;
+  outline: 0;
+}
+
+.sync-compact .submit-btn {
+  min-width: 86px;
+  min-height: 36px;
 }
 
 [hidden] {

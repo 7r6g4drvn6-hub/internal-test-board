@@ -192,47 +192,16 @@
         </div>
       </section>
 
-      <section class="mail-panel sync-panel">
-        <div class="panel-head">
-          <div>
-            <p class="eyebrow">Cloud sync</p>
-            <h2>Publish Changes to GitHub</h2>
-          </div>
-          <p>Use a GitHub token with repo access. Changes are published to the shared board source.</p>
-        </div>
-
-        <div class="mail-grid">
-          <form class="mail-form sync-form" id="syncForm">
-            <h3>GitHub Publish Settings</h3>
-            <label class="field">
-              <span>Repository</span>
-              <input name="repo" value="7r6g4drvn6-hub/internal-test-board" />
-            </label>
-            <label class="field">
-              <span>Branch</span>
-              <input name="branch" value="main" />
-            </label>
-            <label class="field wide">
-              <span>GitHub Token</span>
-              <input name="token" type="password" placeholder="ghp_..." />
-            </label>
-            <label class="field wide">
-              <span>Commit Message</span>
-              <input name="message" value="Update internal test board" />
-            </label>
-            <button class="submit-btn" type="submit">Publish Changes</button>
-          </form>
-
-          <div class="mail-form sync-note">
-            <h3>How it works</h3>
-            <ul>
-              <li>The page still edits locally first.</li>
-              <li>Click publish to push the latest JSON to GitHub.</li>
-              <li>Anyone opening the URL will see the updated GitHub Pages version after refresh.</li>
-            </ul>
-          </div>
-        </div>
-      </section>
+      <details class="sync-drawer">
+        <summary>Maintainer sync</summary>
+        <form class="sync-compact" id="syncForm">
+          <input name="repo" value="7r6g4drvn6-hub/internal-test-board" hidden />
+          <input name="branch" value="main" hidden />
+          <input name="message" value="Update internal test board" hidden />
+          <input name="token" type="password" placeholder="GitHub token" autocomplete="off" />
+          <button class="submit-btn" type="submit">Publish</button>
+        </form>
+      </details>
     </main>
 
     <script src="./script.js"></script>
