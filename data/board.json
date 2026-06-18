@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-18T02:38:19.422Z",
+  "updatedAt": "2026-06-18T03:27:43.436Z",
   "rows": [
     {
       "model": "E4",
@@ -37,21 +37,8 @@
       "resource": "Bench",
       "owner": "Shared",
       "bookStatus": "Pending booking",
-      "updatePlan": "HCP3 plan flsah to V170",
+      "updatePlan": "HCP3 plan flsah to V170 CW26",
       "status": "Available"
-    },
-    {
-      "model": "E4",
-      "env": "Live",
-      "hcp3": "V170",
-      "hcp5": "D380",
-      "vin": "",
-      "ecu": "",
-      "resource": "Vehicle",
-      "owner": "Jida",
-      "bookStatus": "Pending booking",
-      "updatePlan": "",
-      "status": "Pending booking"
     },
     {
       "model": "983",
@@ -63,21 +50,8 @@
       "resource": "Bench",
       "owner": "Shared",
       "bookStatus": "Pending booking",
-      "updatePlan": "HCP5 plan flash to D381",
+      "updatePlan": "HCP5 plan flash to D381 CW26",
       "status": "Pending confirmation"
-    },
-    {
-      "model": "983",
-      "env": "Live",
-      "hcp3": "V170",
-      "hcp5": "D380",
-      "vin": "",
-      "ecu": "",
-      "resource": "Vehicle",
-      "owner": "Jida",
-      "bookStatus": "Pending booking",
-      "updatePlan": "",
-      "status": "Pending booking"
     },
     {
       "model": "M1",
