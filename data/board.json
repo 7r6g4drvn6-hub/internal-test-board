@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-18T01:37:36.971Z",
+  "updatedAt": "2026-06-18T02:10:06.302Z",
   "rows": [
     {
       "model": "E4",
@@ -30,9 +30,9 @@
     {
       "model": "983",
       "env": "Approval",
-      "hcp3": "",
-      "hcp5": "",
-      "vin": "",
+      "hcp3": "V170",
+      "hcp5": "D181",
+      "vin": "BP0EEDXAZ22041143",
       "ecu": "",
       "resource": "Bench",
       "owner": "Shared",
