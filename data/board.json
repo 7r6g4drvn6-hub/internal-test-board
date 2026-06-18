@@ -1,6 +1,32 @@
 {
-  "updatedAt": "2026-06-18T02:15:26.315Z",
+  "updatedAt": "2026-06-18T02:17:19.724Z",
   "rows": [
+    {
+      "model": "E4",
+      "env": "Live",
+      "hcp3": "V170",
+      "hcp5": "D380",
+      "vin": "",
+      "ecu": "",
+      "resource": "Bench",
+      "owner": "Jida",
+      "bookStatus": "Pending booking",
+      "updatePlan": "",
+      "status": "Pending booking"
+    },
+    {
+      "model": "983",
+      "env": "Live",
+      "hcp3": "V170",
+      "hcp5": "D380",
+      "vin": "",
+      "ecu": "",
+      "resource": "Bench",
+      "owner": "Jida",
+      "bookStatus": "Pending booking",
+      "updatePlan": "",
+      "status": "Pending booking"
+    },
     {
       "model": "E4",
       "env": "Approval",
