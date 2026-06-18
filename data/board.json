@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-18T02:17:19.724Z",
+  "updatedAt": "2026-06-18T02:18:56.514Z",
   "rows": [
     {
       "model": "E4",
@@ -11,7 +11,7 @@
       "resource": "Bench",
       "owner": "Jida",
       "bookStatus": "Pending booking",
-      "updatePlan": "",
+      "updatePlan": "--",
       "status": "Pending booking"
     },
     {
@@ -24,7 +24,7 @@
       "resource": "Bench",
       "owner": "Jida",
       "bookStatus": "Pending booking",
-      "updatePlan": "",
+      "updatePlan": "--",
       "status": "Pending booking"
     },
     {
@@ -37,7 +37,7 @@
       "resource": "Bench",
       "owner": "Shared",
       "bookStatus": "Pending booking",
-      "updatePlan": "",
+      "updatePlan": "HCP3 plan flsah to V170",
       "status": "Available"
     },
     {
@@ -63,7 +63,7 @@
       "resource": "Bench",
       "owner": "Shared",
       "bookStatus": "Pending booking",
-      "updatePlan": "",
+      "updatePlan": "HCP5 plan flash to D381",
       "status": "Pending confirmation"
     },
     {
@@ -89,7 +89,7 @@
       "resource": "Bench",
       "owner": "",
       "bookStatus": "Owner pending",
-      "updatePlan": "",
+      "updatePlan": "--",
       "status": "Pending confirmation"
     }
   ]
