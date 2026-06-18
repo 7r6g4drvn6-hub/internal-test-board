@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-18T02:12:07.364Z",
+  "updatedAt": "2026-06-18T02:15:26.315Z",
   "rows": [
     {
       "model": "E4",
@@ -12,7 +12,7 @@
       "owner": "Shared",
       "bookStatus": "Pending booking",
       "updatePlan": "",
-      "status": "Version known"
+      "status": "Available"
     },
     {
       "model": "E4",
@@ -25,7 +25,7 @@
       "owner": "Jida",
       "bookStatus": "Pending booking",
       "updatePlan": "",
-      "status": "Available"
+      "status": "Pending booking"
     },
     {
       "model": "983",
@@ -36,9 +36,9 @@
       "ecu": "",
       "resource": "Bench",
       "owner": "Shared",
-      "bookStatus": "Available",
+      "bookStatus": "Pending booking",
       "updatePlan": "",
-      "status": "Missing info"
+      "status": "Pending confirmation"
     },
     {
       "model": "983",
@@ -51,7 +51,7 @@
       "owner": "Jida",
       "bookStatus": "Pending booking",
       "updatePlan": "",
-      "status": "Available"
+      "status": "Pending booking"
     },
     {
       "model": "M1",
