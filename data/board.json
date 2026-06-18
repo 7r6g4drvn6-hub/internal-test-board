@@ -1,12 +1,12 @@
 {
-  "updatedAt": "2026-06-18T02:18:56.514Z",
+  "updatedAt": "2026-06-18T02:35:59.291Z",
   "rows": [
     {
       "model": "E4",
       "env": "Live",
       "hcp3": "V170",
       "hcp5": "D380",
-      "vin": "",
+      "vin": "BP0EEDXAZ22040597",
       "ecu": "",
       "resource": "Bench",
       "owner": "Jida",
@@ -19,7 +19,7 @@
       "env": "Live",
       "hcp3": "V170",
       "hcp5": "D380",
-      "vin": "",
+      "vin": "BP0EEDXAZ22022208",
       "ecu": "",
       "resource": "Bench",
       "owner": "Jida",
