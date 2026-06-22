@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-22T01:58:25.972Z",
+  "updatedAt": "2026-06-22T02:33:29.701Z",
   "rows": [
     {
       "model": "E4",
@@ -37,7 +37,7 @@
       "resource": "Bench",
       "owner": "Shared",
       "bookStatus": "Pending booking",
-      "updatePlan": "HCP3 plan flsah to V170 CW26",
+      "updatePlan": "newest version",
       "status": "Available"
     },
     {
