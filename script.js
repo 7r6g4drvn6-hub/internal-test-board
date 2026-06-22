@@ -326,7 +326,7 @@ function exportData() {
   const url = URL.createObjectURL(blob);
   const link = document.createElement("a");
   link.href = url;
-  link.download = "cl48-bench-board.json";
+  link.download = "bench-release-board.json";
   link.click();
   URL.revokeObjectURL(url);
 }
@@ -536,7 +536,7 @@ syncForm?.addEventListener("submit", async (event) => {
     branch: String(formData.get("branch") || DEFAULT_SYNC_CONFIG.branch).trim(),
   };
   const token = String(formData.get("token") || "").trim();
-  const message = String(formData.get("message") || "Update internal test board").trim();
+  const message = String(formData.get("message") || "Update bench release board").trim();
 
   if (!token) {
     setSaveState("Token Required", "error");
