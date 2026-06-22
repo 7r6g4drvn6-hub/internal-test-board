@@ -365,9 +365,8 @@ function setToken(token) {
   }
 }
 
-function getRawDataUrl(config = getSyncConfig()) {
-  const [owner, repo] = config.repo.split("/");
-  return `https://raw.githubusercontent.com/${owner}/${repo}/${config.branch}/${REMOTE_DATA_PATH}?t=${Date.now()}`;
+function getRawDataUrl() {
+  return `./${REMOTE_DATA_PATH}?t=${Date.now()}`;
 }
 
 async function loadRemoteRows() {
