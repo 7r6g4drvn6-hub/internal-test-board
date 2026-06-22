@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-18T03:27:43.436Z",
+  "updatedAt": "2026-06-22T01:58:25.972Z",
   "rows": [
     {
       "model": "E4",
@@ -30,7 +30,7 @@
     {
       "model": "E4",
       "env": "Approval",
-      "hcp3": "V160",
+      "hcp3": "V170",
       "hcp5": "D381",
       "vin": "BP0EEDXAZ22041131",
       "ecu": "",
