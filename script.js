@@ -208,6 +208,13 @@ function nowIso() {
   return new Date().toISOString();
 }
 
+function touchAllRows(timestamp = nowIso()) {
+  rows = rows.map((row) => ({
+    ...row,
+    updatedAt: timestamp,
+  }));
+}
+
 function formatUpdateTime(value) {
   if (!value) return "";
   const date = new Date(value);
@@ -542,8 +549,10 @@ syncForm?.addEventListener("submit", async (event) => {
   setSaveState("Publishing", "working");
 
   try {
-    await publishRows(config, token, message);
+    touchAllRows();
     saveRows();
+    renderTable();
+    await publishRows(config, token, message);
     setSaveState("Published to GitHub");
   } catch (error) {
     console.error(error);
