@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-22T02:33:29.701Z",
+  "updatedAt": "2026-06-22T02:34:56.986Z",
   "rows": [
     {
       "model": "E4",
@@ -37,7 +37,7 @@
       "resource": "Bench",
       "owner": "Shared",
       "bookStatus": "Pending booking",
-      "updatePlan": "newest version",
+      "updatePlan": "the lastest version",
       "status": "Available"
     },
     {
