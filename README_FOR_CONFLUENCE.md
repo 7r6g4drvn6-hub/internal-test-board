@@ -1,4 +1,4 @@
-# Bench Release Board - Publish Package
+# Internal Test Board - Publish Package
 
 This folder is ready to be hosted as a static internal website.
 
@@ -17,7 +17,7 @@ This folder is ready to be hosted as a static internal website.
 3. Add this short description near the link:
 
 ```text
-Bench Release Board
+Internal Test Board
 Maintainer: Xu Xuan
 Update frequency: twice per week
 Please use the request email section on the page for bench usage needs or bench status changes.
