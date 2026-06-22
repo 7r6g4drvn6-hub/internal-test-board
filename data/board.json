@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-22T07:55:16.394Z",
+  "updatedAt": "2026-06-22T09:11:56.237Z",
   "rows": [
     {
       "model": "E4",
@@ -13,7 +13,7 @@
       "bookStatus": "Pending booking",
       "updatePlan": "--",
       "status": "Pending booking",
-      "updatedAt": "2026-06-22T07:55:14.704Z"
+      "updatedAt": "2026-06-22T09:11:55.434Z"
     },
     {
       "model": "983",
@@ -27,7 +27,7 @@
       "bookStatus": "Pending booking",
       "updatePlan": "--",
       "status": "Pending booking",
-      "updatedAt": "2026-06-22T07:55:14.704Z"
+      "updatedAt": "2026-06-22T09:11:55.434Z"
     },
     {
       "model": "E4",
@@ -41,7 +41,7 @@
       "bookStatus": "Available",
       "updatePlan": "the lastest version",
       "status": "Available",
-      "updatedAt": "2026-06-22T07:55:14.704Z"
+      "updatedAt": "2026-06-22T09:11:55.434Z"
     },
     {
       "model": "983",
@@ -55,7 +55,7 @@
       "bookStatus": "Pending booking",
       "updatePlan": "HCP5 plan flash to D381 CW26",
       "status": "Pending confirmation",
-      "updatedAt": "2026-06-22T07:55:14.704Z"
+      "updatedAt": "2026-06-22T09:11:55.434Z"
     },
     {
       "model": "M1",
@@ -69,7 +69,7 @@
       "bookStatus": "Owner pending",
       "updatePlan": "--",
       "status": "Pending confirmation",
-      "updatedAt": "2026-06-22T07:55:14.704Z"
+      "updatedAt": "2026-06-22T09:11:55.434Z"
     }
   ]
 }
