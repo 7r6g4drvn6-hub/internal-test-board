@@ -38,6 +38,7 @@ const DEFAULT_ROWS = [
     bookStatus: "Pending booking",
     updatePlan: "Keep the latest Approval baseline and confirm the test window before use.",
     status: "Version known",
+    updatedAt: "",
   },
   {
     model: "E4",
@@ -51,6 +52,7 @@ const DEFAULT_ROWS = [
     bookStatus: "Available",
     updatePlan: "Live baseline. Notify the test team before any new package update.",
     status: "Available",
+    updatedAt: "",
   },
   {
     model: "983",
@@ -64,6 +66,7 @@ const DEFAULT_ROWS = [
     bookStatus: "Missing info",
     updatePlan: "Confirm the latest Approval package and flash plan.",
     status: "Missing info",
+    updatedAt: "",
   },
   {
     model: "983",
@@ -77,6 +80,7 @@ const DEFAULT_ROWS = [
     bookStatus: "Available",
     updatePlan: "Live baseline. Sync the booking plan before future version updates.",
     status: "Available",
+    updatedAt: "",
   },
   {
     model: "M1",
@@ -90,6 +94,7 @@ const DEFAULT_ROWS = [
     bookStatus: "Owner pending",
     updatePlan: "Start regression testing after the Approval version update.",
     status: "Pending confirmation",
+    updatedAt: "",
   },
 ];
 
@@ -120,7 +125,7 @@ function normalizeValue(value) {
   return LEGACY_VALUE_MAP[value] || value;
 }
 
-function normalizeRows(value) {
+function normalizeRows(value, fallbackUpdatedAt = "") {
   return value.map((row) => ({
     ...row,
     model: normalizeValue(row.model || ""),
@@ -134,6 +139,7 @@ function normalizeRows(value) {
     bookStatus: normalizeValue(row.bookStatus || "Pending booking"),
     updatePlan: normalizeValue(row.updatePlan || ""),
     status: normalizeValue(row.status || "Pending confirmation"),
+    updatedAt: row.updatedAt || fallbackUpdatedAt,
   }));
 }
 
@@ -198,6 +204,24 @@ function escapeHtml(value) {
     .replaceAll('"', "&quot;");
 }
 
+function nowIso() {
+  return new Date().toISOString();
+}
+
+function formatUpdateTime(value) {
+  if (!value) return "";
+  const date = new Date(value);
+  if (Number.isNaN(date.getTime())) return value;
+  return date.toLocaleString("en-GB", {
+    year: "numeric",
+    month: "2-digit",
+    day: "2-digit",
+    hour: "2-digit",
+    minute: "2-digit",
+    hour12: false,
+  });
+}
+
 function rowMatches(row) {
   const keyword = searchInput.value.trim().toLowerCase();
   const envMatch = activeFilter === "all" || row.env === activeFilter;
@@ -225,6 +249,7 @@ function renderTable() {
       <td>${textarea(row.updatePlan, "updatePlan", index, "Version update plan")}</td>
       <td>${select(row.status, "status", index, ["Available", "Version known", "Pending confirmation", "Pending booking", "Owner pending", "Missing info", "Blocked"])}</td>
       <td><button class="row-delete" data-index="${index}" type="button">Delete</button></td>
+      <td><span class="update-time">${escapeHtml(formatUpdateTime(row.updatedAt))}</span></td>
     `;
     tableBody.appendChild(tr);
   });
@@ -247,6 +272,7 @@ function updateRowValue(target) {
   if (!Number.isInteger(index) || !field || !rows[index]) return;
 
   rows[index][field] = target.value;
+  rows[index].updatedAt = nowIso();
   scheduleLocalSave();
   updateTargetSelects();
 }
@@ -282,6 +308,7 @@ function addRow() {
     bookStatus: "Pending booking",
     updatePlan: "",
     status: "Pending confirmation",
+    updatedAt: nowIso(),
   });
   saveRows();
   renderTable();
@@ -343,7 +370,7 @@ async function loadRemoteRows() {
     if (!response.ok) throw new Error(`HTTP ${response.status}`);
     const data = await response.json();
     if (!Array.isArray(data.rows)) throw new Error("Invalid cloud data");
-    rows = normalizeRows(data.rows);
+    rows = normalizeRows(data.rows, data.updatedAt || "");
     saveRows();
     renderTable();
     setSaveState("Cloud Data Loaded");

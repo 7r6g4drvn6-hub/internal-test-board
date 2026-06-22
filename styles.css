@@ -262,50 +262,54 @@ h3 {
 
 table {
   width: 100%;
-  min-width: 1440px;
+  min-width: 1560px;
   table-layout: fixed;
   border-collapse: collapse;
   background: white;
 }
 
 .col-model {
-  width: 7.5%;
+  width: 7%;
 }
 
 .col-env {
-  width: 8%;
-}
-
-.col-hcp {
-  width: 6.5%;
-}
-
-.col-vin {
-  width: 12%;
-}
-
-.col-resource {
   width: 7.5%;
 }
 
-.col-owner {
-  width: 8.5%;
+.col-hcp {
+  width: 6%;
 }
 
-.col-booking {
+.col-vin {
   width: 11%;
 }
 
+.col-resource {
+  width: 7%;
+}
+
+.col-owner {
+  width: 8%;
+}
+
+.col-booking {
+  width: 10%;
+}
+
 .col-plan {
-  width: 18%;
+  width: 17%;
 }
 
 .col-status {
-  width: 12%;
+  width: 11%;
 }
 
 .col-action {
-  width: 6%;
+  width: 5.5%;
+}
+
+.col-updated {
+  width: 10%;
 }
 
 th,
@@ -373,6 +377,14 @@ tbody tr.selected {
   cursor: pointer;
   padding: 5px 8px;
   font-weight: 800;
+}
+
+.update-time {
+  display: inline-block;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.35;
+  white-space: nowrap;
 }
 
 .pill,
