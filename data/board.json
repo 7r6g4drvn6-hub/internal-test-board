@@ -1,6 +1,19 @@
 {
-  "updatedAt": "2026-06-22T02:36:14.498Z",
+  "updatedAt": "2026-06-22T03:33:20.077Z",
   "rows": [
+    {
+      "model": "New",
+      "env": "Approval",
+      "hcp3": "",
+      "hcp5": "",
+      "vin": "",
+      "ecu": "",
+      "resource": "Bench",
+      "owner": "",
+      "bookStatus": "Pending booking",
+      "updatePlan": "",
+      "status": "Pending confirmation"
+    },
     {
       "model": "E4",
       "env": "Live",
