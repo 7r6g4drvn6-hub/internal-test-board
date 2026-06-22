@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-22T03:33:20.077Z",
+  "updatedAt": "2026-06-22T05:11:51.590Z",
   "rows": [
     {
       "model": "New",
@@ -10,7 +10,7 @@
       "ecu": "",
       "resource": "Bench",
       "owner": "",
-      "bookStatus": "Pending booking",
+      "bookStatus": "Missing info",
       "updatePlan": "",
       "status": "Pending confirmation"
     },
