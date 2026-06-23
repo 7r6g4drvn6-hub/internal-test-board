@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-23T02:34:22.063Z",
+  "updatedAt": "2026-06-23T02:39:18.239Z",
   "rows": [
     {
       "model": "E4",
@@ -13,7 +13,7 @@
       "bookStatus": "Booked",
       "updatePlan": "HCP5 D380->D381 CW25.2",
       "status": "Available",
-      "updatedAt": "2026-06-23T02:34:21.562Z"
+      "updatedAt": "2026-06-23T02:39:17.561Z"
     },
     {
       "model": "983",
@@ -27,7 +27,7 @@
       "bookStatus": "Booked",
       "updatePlan": "HCP5 D380->D381 CW25.2",
       "status": "Available",
-      "updatedAt": "2026-06-23T02:34:21.562Z"
+      "updatedAt": "2026-06-23T02:39:17.561Z"
     },
     {
       "model": "E4",
@@ -41,7 +41,7 @@
       "bookStatus": "Available",
       "updatePlan": "the lastest version",
       "status": "Available",
-      "updatedAt": "2026-06-23T02:34:21.562Z"
+      "updatedAt": "2026-06-23T02:39:17.561Z"
     },
     {
       "model": "983",
@@ -54,8 +54,8 @@
       "owner": "Shared",
       "bookStatus": "Pending booking",
       "updatePlan": "HCP5 D380->D381 CW25.2",
-      "status": "Pending booking",
-      "updatedAt": "2026-06-23T02:34:21.562Z"
+      "status": "Pending confirmation",
+      "updatedAt": "2026-06-23T02:39:17.561Z"
     },
     {
       "model": "M1",
@@ -69,7 +69,7 @@
       "bookStatus": "Owner pending",
       "updatePlan": "--",
       "status": "Pending confirmation",
-      "updatedAt": "2026-06-23T02:34:21.562Z"
+      "updatedAt": "2026-06-23T02:39:17.561Z"
     }
   ]
 }
