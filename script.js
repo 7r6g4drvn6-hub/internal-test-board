@@ -112,6 +112,7 @@ const statusForm = document.querySelector("#statusForm");
 const emailDraft = document.querySelector("#emailDraft");
 const emailDraftLink = document.querySelector("#emailDraftLink");
 const syncForm = document.querySelector("#syncForm");
+const syncMessage = document.querySelector("#syncMessage");
 
 let rows = loadRows();
 let activeFilter = "all";
@@ -174,6 +175,12 @@ function saveRows() {
 function setSaveState(message, type = "ready") {
   saveState.textContent = message;
   saveState.dataset.type = type;
+}
+
+function setSyncMessage(message, type = "ready") {
+  if (!syncMessage) return;
+  syncMessage.textContent = message;
+  syncMessage.dataset.type = type;
 }
 
 function scheduleLocalSave() {
@@ -395,9 +402,30 @@ async function getRemoteFileSha(config, token) {
   });
 
   if (response.status === 404) return "";
-  if (!response.ok) throw new Error(`Unable to read remote data: HTTP ${response.status}`);
+  if (!response.ok) {
+    const text = await response.text();
+    throw new Error(buildPublishErrorMessage(response.status, text));
+  }
   const data = await response.json();
   return data.sha || "";
+}
+
+function parseGitHubError(text) {
+  try {
+    return JSON.parse(text).message || text;
+  } catch {
+    return text;
+  }
+}
+
+function buildPublishErrorMessage(status, text) {
+  const detail = parseGitHubError(text);
+  if (status === 401) return "Token invalid or expired. Please create a new GitHub token.";
+  if (status === 403) return "Token has no write permission. Please enable repository Contents read/write permission.";
+  if (status === 404) return "Repository or data file not found. Please check repo access.";
+  if (status === 409) return "Remote data changed. Reload this page and publish again.";
+  if (status === 422) return `GitHub rejected the update: ${detail}`;
+  return `GitHub publish failed: HTTP ${status}. ${detail}`;
 }
 
 function toBase64(value) {
@@ -430,7 +458,7 @@ async function publishRows(config, token, message) {
 
   if (!response.ok) {
     const text = await response.text();
-    throw new Error(`Publish failed: HTTP ${response.status} ${text}`);
+    throw new Error(buildPublishErrorMessage(response.status, text));
   }
 
   return response.json();
@@ -540,12 +568,14 @@ syncForm?.addEventListener("submit", async (event) => {
 
   if (!token) {
     setSaveState("Token Required", "error");
+    setSyncMessage("Please enter your GitHub token first.", "error");
     return;
   }
 
   setSyncConfig(config);
   setToken(token);
   setSaveState("Publishing", "working");
+  setSyncMessage("Publishing data to GitHub...", "working");
 
   try {
     touchAllRows();
@@ -553,9 +583,11 @@ syncForm?.addEventListener("submit", async (event) => {
     renderTable();
     await publishRows(config, token, message);
     setSaveState("Published to GitHub");
+    setSyncMessage("Published. GitHub Pages may need 1-2 minutes to refresh.", "ready");
   } catch (error) {
     console.error(error);
     setSaveState("Publish Failed", "error");
+    setSyncMessage(error.message || "Publish failed. Please check the GitHub token.", "error");
   }
 });
 renderTable();
