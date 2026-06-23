@@ -175,6 +175,7 @@ function saveRows() {
 function setSaveState(message, type = "ready") {
   saveState.textContent = message;
   saveState.dataset.type = type;
+  saveState.title = message;
 }
 
 function setSyncMessage(message, type = "ready") {
@@ -559,6 +560,7 @@ hydrateSyncForm();
 syncForm?.addEventListener("submit", async (event) => {
   event.preventDefault();
   const formData = new FormData(syncForm);
+  const publishButton = syncForm.querySelector("button[type='submit']");
   const config = {
     repo: String(formData.get("repo") || DEFAULT_SYNC_CONFIG.repo).trim(),
     branch: String(formData.get("branch") || DEFAULT_SYNC_CONFIG.branch).trim(),
@@ -576,18 +578,23 @@ syncForm?.addEventListener("submit", async (event) => {
   setToken(token);
   setSaveState("Publishing", "working");
   setSyncMessage("Publishing data to GitHub...", "working");
+  if (publishButton) publishButton.disabled = true;
 
   try {
     touchAllRows();
     saveRows();
     renderTable();
     await publishRows(config, token, message);
-    setSaveState("Published to GitHub");
-    setSyncMessage("Published. GitHub Pages may need 1-2 minutes to refresh.", "ready");
+    const successMessage = "Published. GitHub Pages may need 1-2 minutes to refresh.";
+    setSaveState(successMessage);
+    setSyncMessage(successMessage, "ready");
   } catch (error) {
     console.error(error);
-    setSaveState("Publish Failed", "error");
-    setSyncMessage(error.message || "Publish failed. Please check the GitHub token.", "error");
+    const errorMessage = error.message || "Publish failed. Please check the GitHub token.";
+    setSaveState(errorMessage, "error");
+    setSyncMessage(errorMessage, "error");
+  } finally {
+    if (publishButton) publishButton.disabled = false;
   }
 });
 renderTable();
