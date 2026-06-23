@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-23T02:27:06.109Z",
+  "updatedAt": "2026-06-23T02:33:14.396Z",
   "rows": [
     {
       "model": "E4",
@@ -11,9 +11,9 @@
       "resource": "Bench",
       "owner": "Jida",
       "bookStatus": "Booked",
-      "updatePlan": "HCP3 D380->D381",
+      "updatePlan": "HCP5 D380->D381 CW25.2",
       "status": "Available",
-      "updatedAt": "2026-06-23T02:27:06.088Z"
+      "updatedAt": "2026-06-23T02:33:13.421Z"
     },
     {
       "model": "983",
@@ -25,9 +25,9 @@
       "resource": "Bench",
       "owner": "Jida",
       "bookStatus": "Booked",
-      "updatePlan": "HCP3 D380->D381",
+      "updatePlan": "HCP5 D380->D381 CW25.2",
       "status": "Available",
-      "updatedAt": "2026-06-23T02:27:06.088Z"
+      "updatedAt": "2026-06-23T02:33:13.421Z"
     },
     {
       "model": "E4",
@@ -41,7 +41,7 @@
       "bookStatus": "Available",
       "updatePlan": "the lastest version",
       "status": "Available",
-      "updatedAt": "2026-06-23T02:27:06.088Z"
+      "updatedAt": "2026-06-23T02:33:13.421Z"
     },
     {
       "model": "983",
@@ -53,9 +53,9 @@
       "resource": "Bench",
       "owner": "Shared",
       "bookStatus": "Pending booking",
-      "updatePlan": "HCP5 plan flash to D381 CW26",
+      "updatePlan": "HCP5 plan flash to D381 CW25.2",
       "status": "Pending confirmation",
-      "updatedAt": "2026-06-23T02:27:06.088Z"
+      "updatedAt": "2026-06-23T02:33:13.421Z"
     },
     {
       "model": "M1",
@@ -69,7 +69,7 @@
       "bookStatus": "Owner pending",
       "updatePlan": "--",
       "status": "Pending confirmation",
-      "updatedAt": "2026-06-23T02:27:06.088Z"
+      "updatedAt": "2026-06-23T02:33:13.421Z"
     }
   ]
 }
