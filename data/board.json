@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-24T02:26:20.906Z",
+  "updatedAt": "2026-06-24T02:28:29.256Z",
   "rows": [
     {
       "model": "E4",
@@ -13,7 +13,7 @@
       "bookStatus": "Booked",
       "updatePlan": "the lastest version",
       "status": "Available",
-      "updatedAt": "2026-06-24T02:26:19.568Z"
+      "updatedAt": "2026-06-24T02:28:27.938Z"
     },
     {
       "model": "983",
@@ -27,7 +27,7 @@
       "bookStatus": "Booked",
       "updatePlan": "the lastest version",
       "status": "Available",
-      "updatedAt": "2026-06-24T02:26:19.568Z"
+      "updatedAt": "2026-06-24T02:28:27.938Z"
     },
     {
       "model": "E4",
@@ -41,7 +41,7 @@
       "bookStatus": "Available",
       "updatePlan": "the lastest version",
       "status": "Available",
-      "updatedAt": "2026-06-24T02:26:19.568Z"
+      "updatedAt": "2026-06-24T02:28:27.938Z"
     },
     {
       "model": "983",
@@ -54,8 +54,8 @@
       "owner": "Shared",
       "bookStatus": "Available",
       "updatePlan": "the lastest version",
-      "status": "Pending booking",
-      "updatedAt": "2026-06-24T02:26:19.568Z"
+      "status": "Available",
+      "updatedAt": "2026-06-24T02:28:27.938Z"
     },
     {
       "model": "M1",
@@ -69,7 +69,7 @@
       "bookStatus": "Owner pending",
       "updatePlan": "--",
       "status": "Pending confirmation",
-      "updatedAt": "2026-06-24T02:26:19.568Z"
+      "updatedAt": "2026-06-24T02:28:27.938Z"
     }
   ]
 }
