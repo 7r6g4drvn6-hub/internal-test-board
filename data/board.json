@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-23T05:20:25.744Z",
+  "updatedAt": "2026-06-24T02:26:20.906Z",
   "rows": [
     {
       "model": "E4",
@@ -13,7 +13,7 @@
       "bookStatus": "Booked",
       "updatePlan": "the lastest version",
       "status": "Available",
-      "updatedAt": "2026-06-23T05:20:24.313Z"
+      "updatedAt": "2026-06-24T02:26:19.568Z"
     },
     {
       "model": "983",
@@ -27,7 +27,7 @@
       "bookStatus": "Booked",
       "updatePlan": "the lastest version",
       "status": "Available",
-      "updatedAt": "2026-06-23T05:20:24.313Z"
+      "updatedAt": "2026-06-24T02:26:19.568Z"
     },
     {
       "model": "E4",
@@ -41,21 +41,21 @@
       "bookStatus": "Available",
       "updatePlan": "the lastest version",
       "status": "Available",
-      "updatedAt": "2026-06-23T05:20:24.313Z"
+      "updatedAt": "2026-06-24T02:26:19.568Z"
     },
     {
       "model": "983",
       "env": "Approval",
       "hcp3": "V170",
-      "hcp5": "D181",
+      "hcp5": "D381",
       "vin": "BP0EEDXAZ22041143",
       "ecu": "",
       "resource": "Bench",
       "owner": "Shared",
-      "bookStatus": "Pending booking",
-      "updatePlan": "HCP5 D380->D381 CW25.2",
+      "bookStatus": "Available",
+      "updatePlan": "the lastest version",
       "status": "Pending booking",
-      "updatedAt": "2026-06-23T05:20:24.313Z"
+      "updatedAt": "2026-06-24T02:26:19.568Z"
     },
     {
       "model": "M1",
@@ -69,7 +69,7 @@
       "bookStatus": "Owner pending",
       "updatePlan": "--",
       "status": "Pending confirmation",
-      "updatedAt": "2026-06-23T05:20:24.313Z"
+      "updatedAt": "2026-06-24T02:26:19.568Z"
     }
   ]
 }
