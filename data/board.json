@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-24T02:28:29.256Z",
+  "updatedAt": "2026-06-26T05:48:58.988Z",
   "rows": [
     {
       "model": "E4",
@@ -10,10 +10,10 @@
       "ecu": "",
       "resource": "Bench",
       "owner": "Jida",
-      "bookStatus": "Booked",
+      "bookStatus": "Pending booking",
       "updatePlan": "the lastest version",
       "status": "Available",
-      "updatedAt": "2026-06-24T02:28:27.938Z"
+      "updatedAt": "2026-06-26T05:48:57.783Z"
     },
     {
       "model": "983",
@@ -24,10 +24,10 @@
       "ecu": "",
       "resource": "Bench",
       "owner": "Jida",
-      "bookStatus": "Booked",
+      "bookStatus": "Pending booking",
       "updatePlan": "the lastest version",
       "status": "Available",
-      "updatedAt": "2026-06-24T02:28:27.938Z"
+      "updatedAt": "2026-06-26T05:48:57.783Z"
     },
     {
       "model": "E4",
@@ -41,7 +41,7 @@
       "bookStatus": "Available",
       "updatePlan": "the lastest version",
       "status": "Available",
-      "updatedAt": "2026-06-24T02:28:27.938Z"
+      "updatedAt": "2026-06-26T05:48:57.783Z"
     },
     {
       "model": "983",
@@ -55,7 +55,7 @@
       "bookStatus": "Available",
       "updatePlan": "the lastest version",
       "status": "Available",
-      "updatedAt": "2026-06-24T02:28:27.938Z"
+      "updatedAt": "2026-06-26T05:48:57.783Z"
     },
     {
       "model": "M1",
@@ -69,7 +69,7 @@
       "bookStatus": "Owner pending",
       "updatePlan": "--",
       "status": "Pending confirmation",
-      "updatedAt": "2026-06-24T02:28:27.938Z"
+      "updatedAt": "2026-06-26T05:48:57.783Z"
     }
   ]
 }
