@@ -1,8 +1,8 @@
 {
-  "updatedAt": "2026-06-26T05:48:58.988Z",
+  "updatedAt": "2026-07-01T01:59:31.152Z",
   "rows": [
     {
-      "model": "E4",
+      "model": "CL8/E4",
       "env": "Live",
       "hcp3": "V170",
       "hcp5": "D381",
@@ -13,10 +13,10 @@
       "bookStatus": "Pending booking",
       "updatePlan": "the lastest version",
       "status": "Available",
-      "updatedAt": "2026-06-26T05:48:57.783Z"
+      "updatedAt": "2026-07-01T01:59:29.886Z"
     },
     {
-      "model": "983",
+      "model": "CL8/983",
       "env": "Live",
       "hcp3": "V170",
       "hcp5": "D381",
@@ -27,10 +27,10 @@
       "bookStatus": "Pending booking",
       "updatePlan": "the lastest version",
       "status": "Available",
-      "updatedAt": "2026-06-26T05:48:57.783Z"
+      "updatedAt": "2026-07-01T01:59:29.886Z"
     },
     {
-      "model": "E4",
+      "model": "CL8/E4",
       "env": "Approval",
       "hcp3": "V170",
       "hcp5": "D381",
@@ -38,13 +38,13 @@
       "ecu": "",
       "resource": "Bench",
       "owner": "Shared",
-      "bookStatus": "Available",
-      "updatePlan": "the lastest version",
-      "status": "Available",
-      "updatedAt": "2026-06-26T05:48:57.783Z"
+      "bookStatus": "Blocked",
+      "updatePlan": "HCP3 plan update to V180\nConmod plan update to 647",
+      "status": "Blocked",
+      "updatedAt": "2026-07-01T01:59:29.886Z"
     },
     {
-      "model": "983",
+      "model": "CL8/E4",
       "env": "Approval",
       "hcp3": "V170",
       "hcp5": "D381",
@@ -52,13 +52,13 @@
       "ecu": "",
       "resource": "Bench",
       "owner": "Shared",
-      "bookStatus": "Available",
-      "updatePlan": "the lastest version",
-      "status": "Available",
-      "updatedAt": "2026-06-26T05:48:57.783Z"
+      "bookStatus": "Blocked",
+      "updatePlan": "HCP3 plan update to V180\nConmod plan update to 647",
+      "status": "Blocked",
+      "updatedAt": "2026-07-01T01:59:29.886Z"
     },
     {
-      "model": "M1",
+      "model": "CL8/M1",
       "env": "Approval",
       "hcp3": "",
       "hcp5": "",
@@ -69,7 +69,7 @@
       "bookStatus": "Owner pending",
       "updatePlan": "--",
       "status": "Pending confirmation",
-      "updatedAt": "2026-06-26T05:48:57.783Z"
+      "updatedAt": "2026-07-01T01:59:29.886Z"
     }
   ]
 }
