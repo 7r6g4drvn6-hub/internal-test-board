@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-01T01:59:31.152Z",
+  "updatedAt": "2026-07-01T05:27:53.369Z",
   "rows": [
     {
       "model": "CL8/E4",
@@ -11,9 +11,9 @@
       "resource": "Bench",
       "owner": "Jida",
       "bookStatus": "Pending booking",
-      "updatePlan": "the lastest version",
+      "updatePlan": "HCP3 plan update to V180\nConmod plan update to 647",
       "status": "Available",
-      "updatedAt": "2026-07-01T01:59:29.886Z"
+      "updatedAt": "2026-07-01T05:27:51.855Z"
     },
     {
       "model": "CL8/983",
@@ -25,37 +25,37 @@
       "resource": "Bench",
       "owner": "Jida",
       "bookStatus": "Pending booking",
-      "updatePlan": "the lastest version",
+      "updatePlan": "HCP3 plan update to V180\nConmod plan update to 647",
       "status": "Available",
-      "updatedAt": "2026-07-01T01:59:29.886Z"
+      "updatedAt": "2026-07-01T05:27:51.855Z"
     },
     {
       "model": "CL8/E4",
       "env": "Approval",
-      "hcp3": "V170",
+      "hcp3": "V180",
       "hcp5": "D381",
       "vin": "BP0EEDXAZ22041131",
       "ecu": "",
       "resource": "Bench",
       "owner": "Shared",
-      "bookStatus": "Blocked",
-      "updatePlan": "HCP3 plan update to V180\nConmod plan update to 647",
+      "bookStatus": "Available",
+      "updatePlan": "the lastest version",
       "status": "Blocked",
-      "updatedAt": "2026-07-01T01:59:29.886Z"
+      "updatedAt": "2026-07-01T05:27:51.855Z"
     },
     {
       "model": "CL8/E4",
       "env": "Approval",
-      "hcp3": "V170",
+      "hcp3": "V180",
       "hcp5": "D381",
       "vin": "BP0EEDXAZ22041143",
       "ecu": "",
       "resource": "Bench",
       "owner": "Shared",
-      "bookStatus": "Blocked",
-      "updatePlan": "HCP3 plan update to V180\nConmod plan update to 647",
+      "bookStatus": "Available",
+      "updatePlan": "the lastest version",
       "status": "Blocked",
-      "updatedAt": "2026-07-01T01:59:29.886Z"
+      "updatedAt": "2026-07-01T05:27:51.855Z"
     },
     {
       "model": "CL8/M1",
@@ -69,7 +69,7 @@
       "bookStatus": "Owner pending",
       "updatePlan": "--",
       "status": "Pending confirmation",
-      "updatedAt": "2026-07-01T01:59:29.886Z"
+      "updatedAt": "2026-07-01T05:27:51.855Z"
     }
   ]
 }
