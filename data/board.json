@@ -1,10 +1,10 @@
 {
-  "updatedAt": "2026-07-09T09:57:18.337Z",
+  "updatedAt": "2026-07-13T05:25:10.563Z",
   "rows": [
     {
       "model": "CL8/E4",
       "env": "Live",
-      "hcp3": "V170",
+      "hcp3": "V180",
       "hcp5": "D381",
       "vin": "BP0EEDXAZ22040597",
       "ecu": "",
@@ -13,12 +13,12 @@
       "bookStatus": "Pending booking",
       "updatePlan": "HCP3 plan update to V180\nConmod plan update to 647",
       "status": "Available",
-      "updatedAt": "2026-07-09T09:57:17.244Z"
+      "updatedAt": "2026-07-13T05:25:08.889Z"
     },
     {
       "model": "CL8/983",
       "env": "Live",
-      "hcp3": "V170",
+      "hcp3": "V180",
       "hcp5": "D381",
       "vin": "BP0EEDXAZ22022208",
       "ecu": "",
@@ -27,7 +27,7 @@
       "bookStatus": "Pending booking",
       "updatePlan": "HCP3 plan update to V180\nConmod plan update to 647",
       "status": "Available",
-      "updatedAt": "2026-07-09T09:57:17.244Z"
+      "updatedAt": "2026-07-13T05:25:08.889Z"
     },
     {
       "model": "CL8/E4",
@@ -41,7 +41,7 @@
       "bookStatus": "Available",
       "updatePlan": "the lastest version",
       "status": "Blocked",
-      "updatedAt": "2026-07-09T09:57:17.244Z"
+      "updatedAt": "2026-07-13T05:25:08.889Z"
     },
     {
       "model": "CL8/E4",
@@ -55,7 +55,7 @@
       "bookStatus": "Available",
       "updatePlan": "the lastest version",
       "status": "Blocked",
-      "updatedAt": "2026-07-09T09:57:17.244Z"
+      "updatedAt": "2026-07-13T05:25:08.889Z"
     },
     {
       "model": "CL8/M1",
@@ -69,7 +69,7 @@
       "bookStatus": "Owner pending",
       "updatePlan": "--",
       "status": "Pending confirmation",
-      "updatedAt": "2026-07-09T09:57:17.244Z"
+      "updatedAt": "2026-07-13T05:25:08.889Z"
     }
   ]
 }
