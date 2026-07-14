@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-13T05:25:10.563Z",
+  "updatedAt": "2026-07-14T02:39:00.121Z",
   "rows": [
     {
       "model": "CL8/E4",
@@ -11,9 +11,9 @@
       "resource": "Bench",
       "owner": "Jida",
       "bookStatus": "Pending booking",
-      "updatePlan": "HCP3 plan update to V180\nConmod plan update to 647",
+      "updatePlan": "the lastest version",
       "status": "Available",
-      "updatedAt": "2026-07-13T05:25:08.889Z"
+      "updatedAt": "2026-07-14T02:38:58.907Z"
     },
     {
       "model": "CL8/983",
@@ -25,14 +25,14 @@
       "resource": "Bench",
       "owner": "Jida",
       "bookStatus": "Pending booking",
-      "updatePlan": "HCP3 plan update to V180\nConmod plan update to 647",
+      "updatePlan": "the lastest version",
       "status": "Available",
-      "updatedAt": "2026-07-13T05:25:08.889Z"
+      "updatedAt": "2026-07-14T02:38:58.907Z"
     },
     {
       "model": "CL8/E4",
       "env": "Approval",
-      "hcp3": "V180",
+      "hcp3": "V190",
       "hcp5": "D381",
       "vin": "BP0EEDXAZ22041131",
       "ecu": "",
@@ -41,12 +41,12 @@
       "bookStatus": "Available",
       "updatePlan": "the lastest version",
       "status": "Blocked",
-      "updatedAt": "2026-07-13T05:25:08.889Z"
+      "updatedAt": "2026-07-14T02:38:58.907Z"
     },
     {
       "model": "CL8/E4",
       "env": "Approval",
-      "hcp3": "V180",
+      "hcp3": "V190",
       "hcp5": "D381",
       "vin": "BP0EEDXAZ22041143",
       "ecu": "",
@@ -55,7 +55,7 @@
       "bookStatus": "Available",
       "updatePlan": "the lastest version",
       "status": "Blocked",
-      "updatedAt": "2026-07-13T05:25:08.889Z"
+      "updatedAt": "2026-07-14T02:38:58.907Z"
     },
     {
       "model": "CL8/M1",
@@ -69,7 +69,7 @@
       "bookStatus": "Owner pending",
       "updatePlan": "--",
       "status": "Pending confirmation",
-      "updatedAt": "2026-07-13T05:25:08.889Z"
+      "updatedAt": "2026-07-14T02:38:58.907Z"
     }
   ]
 }
