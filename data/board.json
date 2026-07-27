@@ -1,11 +1,11 @@
 {
-  "updatedAt": "2026-07-27T06:16:15.968Z",
+  "updatedAt": "2026-07-27T06:18:46.132Z",
   "rows": [
     {
       "model": "CL8/E4",
       "env": "Live",
       "hcp3": "V190",
-      "hcp5": "D381",
+      "hcp5": "0180",
       "vin": "BP0EEDXAZ22040597",
       "ecu": "",
       "resource": "Bench",
@@ -13,7 +13,7 @@
       "bookStatus": "Pending booking",
       "updatePlan": "the lastest version",
       "status": "Available",
-      "updatedAt": "2026-07-27T06:16:13.795Z"
+      "updatedAt": "2026-07-27T06:18:44.604Z"
     },
     {
       "model": "CL8/983",
@@ -24,10 +24,10 @@
       "ecu": "",
       "resource": "Bench",
       "owner": "Jida",
-      "bookStatus": "Pending booking",
-      "updatePlan": "the lastest version",
-      "status": "Available",
-      "updatedAt": "2026-07-27T06:16:13.795Z"
+      "bookStatus": "Blocked",
+      "updatePlan": "Hcp3 plan update to V300",
+      "status": "Version known",
+      "updatedAt": "2026-07-27T06:18:44.604Z"
     },
     {
       "model": "CL8/E4",
@@ -41,13 +41,13 @@
       "bookStatus": "Available",
       "updatePlan": "the lastest version",
       "status": "Available",
-      "updatedAt": "2026-07-27T06:16:13.795Z"
+      "updatedAt": "2026-07-27T06:18:44.604Z"
     },
     {
       "model": "CL8/E4",
       "env": "Approval",
       "hcp3": "V190",
-      "hcp5": "D381",
+      "hcp5": "0180",
       "vin": "BP0EEDXAZ22041143",
       "ecu": "",
       "resource": "Bench",
@@ -55,7 +55,7 @@
       "bookStatus": "Available",
       "updatePlan": "the lastest version",
       "status": "Blocked",
-      "updatedAt": "2026-07-27T06:16:13.795Z"
+      "updatedAt": "2026-07-27T06:18:44.604Z"
     },
     {
       "model": "CL8/M1",
@@ -69,7 +69,7 @@
       "bookStatus": "Booked",
       "updatePlan": "the lastest version",
       "status": "Available",
-      "updatedAt": "2026-07-27T06:16:13.795Z"
+      "updatedAt": "2026-07-27T06:18:44.604Z"
     }
   ]
 }
