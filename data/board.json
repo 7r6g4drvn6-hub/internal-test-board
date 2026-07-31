@@ -1,10 +1,10 @@
 {
-  "updatedAt": "2026-07-30T09:59:38.295Z",
+  "updatedAt": "2026-07-31T05:34:40.447Z",
   "rows": [
     {
       "model": "CL8/E4",
       "env": "Live",
-      "hcp3": "V190",
+      "hcp3": "V300",
       "hcp5": "0180",
       "vin": "BP0EEDXAZ22040597",
       "ecu": "",
@@ -13,13 +13,13 @@
       "bookStatus": "Pending booking",
       "updatePlan": "the lastest version",
       "status": "Available",
-      "updatedAt": "2026-07-30T09:59:37.236Z"
+      "updatedAt": "2026-07-31T05:34:38.675Z"
     },
     {
       "model": "CL8/983",
       "env": "Live",
       "hcp3": "V300",
-      "hcp5": "D381",
+      "hcp5": "0180",
       "vin": "BP0EEDXAZ22022208",
       "ecu": "",
       "resource": "Bench",
@@ -27,7 +27,7 @@
       "bookStatus": "Blocked",
       "updatePlan": "Hcp3 plan update to V300",
       "status": "Version known",
-      "updatedAt": "2026-07-30T09:59:37.236Z"
+      "updatedAt": "2026-07-31T05:34:38.675Z"
     },
     {
       "model": "CL8/E4",
@@ -41,7 +41,7 @@
       "bookStatus": "Available",
       "updatePlan": "the lastest version",
       "status": "Available",
-      "updatedAt": "2026-07-30T09:59:37.236Z"
+      "updatedAt": "2026-07-31T05:34:38.675Z"
     },
     {
       "model": "CL8/E4",
@@ -55,7 +55,7 @@
       "bookStatus": "Available",
       "updatePlan": "the lastest version",
       "status": "Blocked",
-      "updatedAt": "2026-07-30T09:59:37.236Z"
+      "updatedAt": "2026-07-31T05:34:38.675Z"
     },
     {
       "model": "CL8/M1",
@@ -69,7 +69,7 @@
       "bookStatus": "Blocked",
       "updatePlan": "the lastest version",
       "status": "Available",
-      "updatedAt": "2026-07-30T09:59:37.236Z"
+      "updatedAt": "2026-07-31T05:34:38.675Z"
     }
   ]
 }
